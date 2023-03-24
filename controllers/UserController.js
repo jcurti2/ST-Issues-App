@@ -9,6 +9,17 @@ const CreateUser = async (req, res) => {
     }
 }
 
+const DeleteUser = async (req, res) => {
+    try {
+      let id = +req.params.id
+      await User.destroy({ where: { id: id } })
+      res.send({ message: `Deleted user with an id of ${id}` })
+    } catch (error) {
+      throw error
+    }
+  }
+
 module.exports = {
     CreateUser,
+    DeleteUser
 }
