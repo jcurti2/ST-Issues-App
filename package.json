@@ -1,0 +1,20 @@
+{
+  "name": "st-issues-app",
+  "version": "1.0.0",
+  "description": "[LinkedIn](https://www.linkedin.com/in/josh-curtis08/) [GitHub](https://github.com/jcurti2)  *** ### ***Description*** #### This application is designed to allow users in the Seattle area to post about issues at transit stops and make it known to other transit riders.  Did a bus never arrive at your stop, is the bus delayed, are there other issues that occured during your transit? Post it here for other users to be aware of during their commute.  *** ### ***Techonologies Used*** * React * Express * Node.js * PostgreSQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcurti2/ST-Issues-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcurti2/ST-Issues-App/issues"
+  },
+  "homepage": "https://github.com/jcurti2/ST-Issues-App#readme"
+}
