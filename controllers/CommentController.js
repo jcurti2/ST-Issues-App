@@ -26,6 +26,12 @@ const GetPostComments = async (req, res) => {
     }
 }
 
+// const DeleteComment = async (req,res) => {
+//     try {
+//         post mvp
+//     }
+// }
+
 module.exports = {
     CreateComment,
     GetPostComments
