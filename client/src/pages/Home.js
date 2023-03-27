@@ -9,8 +9,8 @@ const Home = () => {
     const getAllPosts = async () => {
         try {
             let res = await axios.get('http://localhost:3001/api/post')
-            console.log(res);
-            setAllPosts(res.data.posts)
+            console.log(res.data);
+            setAllPosts(res.data)
         } catch (error) {
             console.log(error);
         }
@@ -27,15 +27,10 @@ const Home = () => {
   return (
     <div>
       <div>
-        {allPosts && allPosts.map((post) =>(
-            <Link
-            to={`/postDetails/${post.id}`}
-            key={post.id}
-            state={post}
-            className="postLink"
-            >
+        {allPosts && allPosts.sort((b,a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) =>(
+            <div key={post.id} className="postLink">
                 <h2 className="postTitle">{post.name}</h2>
-            </Link>
+            </div>
         ))}
       </div>
     </div>
