@@ -22,7 +22,7 @@ const PostDetails = () => {
         }
 
         const initialState = {
-            name: '',
+            // name: '',
             content: ''
         }
     
@@ -51,7 +51,7 @@ const PostDetails = () => {
       {onePost.createdAt}
      
       <form onSubmit={handleSubmit} className="form">
-            <h3>Create Comment</h3>
+            <h3></h3>
                 {/* <input
                     placeholder="Comment Title"
                     id="name"
@@ -60,7 +60,7 @@ const PostDetails = () => {
                     value={formState.name}
                 /> */}
                 <input
-                    placeholder="Comment"
+                    placeholder="Add Comment"
                     id="content"
                     type="text"
                     onChange={handleChange}
