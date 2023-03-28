@@ -9,6 +9,26 @@ const CreateUser = async (req, res) => {
     }
 }
 
+const GetUserByEmail = async (req, res) => {
+  try {
+    const {email} = req.body
+    const user = await User.findOne({ where: {email:email} })
+    res.send(user)
+  } catch (error) {
+    throw error
+  }
+}
+
+const GetUserById = async (req, res) => {
+  try {
+    const id = req.params.id
+    const user = await User.findOne({ where: {id:id} })
+    res.send(user)
+  } catch (error) {
+    throw error
+  }
+}
+
 const DeleteUser = async (req, res) => {
     try {
       let id = +req.params.id
@@ -21,5 +41,7 @@ const DeleteUser = async (req, res) => {
 
 module.exports = {
     CreateUser,
-    DeleteUser
+    DeleteUser,
+    GetUserByEmail,
+    GetUserById
 }
