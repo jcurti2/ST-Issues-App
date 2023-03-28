@@ -19,11 +19,12 @@ const Login = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const res = await axios.get(`http://localhost:3001/api/user/${formState.email}`)
-        // console.log(res.data);
+        const res = await axios.post(`http://localhost:3001/api/user/login`, formState)
+
+        console.log(res.data);
         if(res && Object.keys(res.data).length && res.data.email == formState.email)
         {
-            navigate('/home', { state: { email: res.data.email, } })
+            navigate(`/home/${res.data.id}`)
         } else {
             alert('Incorrect Email')
             setFormState(initialState)
@@ -51,7 +52,7 @@ const Login = () => {
                 />
                 <button type="submit" className="submitButton">Submit</button>
         </form>
-      
+      <button type="submit" onClick={()=>{navigate('/register')}}>Register</button>
     </div>
   )
 }

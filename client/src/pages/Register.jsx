@@ -27,10 +27,10 @@ const Register = () => {
   return (
     <div>
         <form onSubmit={handleSubmit} className="form">
-            <h1 >Register</h1>
+            <h1>Register</h1>
                 <input
                     placeholder="Username"
-                    id="name"
+                    id="username"
                     type="text"
                     onChange={handleChange}
                     value={formState.username}

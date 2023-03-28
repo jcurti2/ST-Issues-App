@@ -1,18 +1,21 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
+import CreatePost from '../components/CreatePost'
 
 const Home = () => {
 
     const location = useLocation()
     const [allPosts, setAllPosts] = useState([])
     const [ user, setUser] = useState({})
+    const {id} = useParams()
 
     const getUser = async () => {
-            let res = await axios.get(`http://localhost:3001/api/user/${location.state.email}`)
-        console.log(res, 'here');
+            
+            let res = await axios.get(`http://localhost:3001/api/user/${id}`)
+        console.log(res.data, 'here');
         setUser(res.data)
     }
 
@@ -34,8 +37,9 @@ const Home = () => {
         
   return (
     <div>
+        {user.username} {user.email}
         <div>
-            {user.username} {user.email}
+            <CreatePost userId={id} getAllPosts={getAllPosts}/>
         </div>
 
       <div>

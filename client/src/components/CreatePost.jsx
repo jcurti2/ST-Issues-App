@@ -3,8 +3,9 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const CreatePost = () => {
-    let navigate = useNavigate()
+const CreatePost = ({userId, getAllPosts}) => {
+    
+    // let navigate = useNavigate()
 
     const initialState = {
         name: '',
@@ -18,16 +19,17 @@ const CreatePost = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        // await axios.post(`http://localhost:3001/api/post/${userId}`, formState)
+        // console.log(userId);
+        await axios.post(`http://localhost:3001/api/post/${userId}`, formState)
         setFormState(initialState)
-        await navigate('/')
+        getAllPosts()
     }
 
 
   return (
     <div>
         <form onSubmit={handleSubmit} className="form">
-            <h1 >Create Post</h1>
+            <h2 >Create Post</h2>
                 <input
                     placeholder="Name"
                     id="name"
@@ -36,8 +38,8 @@ const CreatePost = () => {
                     value={formState.name}
                 />
                 <input
-                    placeholder="Location"
-                    id="location"
+                    placeholder="Content"
+                    id="content"
                     type="text"
                     onChange={handleChange}
                     value={formState.content}
