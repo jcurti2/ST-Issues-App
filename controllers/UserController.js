@@ -9,6 +9,15 @@ const CreateUser = async (req, res) => {
     }
 }
 
+const GetUserById = async (req, res) => {
+  try {
+    const user = await User.findByPk(req.params.id)
+    res.send(user)
+  } catch (error) {
+    throw error
+  }
+}
+
 const DeleteUser = async (req, res) => {
     try {
       let id = +req.params.id
@@ -21,5 +30,6 @@ const DeleteUser = async (req, res) => {
 
 module.exports = {
     CreateUser,
-    DeleteUser
+    DeleteUser,
+    GetUserById
 }
