@@ -1,15 +1,15 @@
-import {React, useState, useEffect} from 'react'
-import axios from axios
-import {useLocation, useNavigate } from 'react-router-dom'
+// import {React, useState, useEffect} from 'react'
+// import axios from axios
+// import {useLocation, useNavigate } from 'react-router-dom'
 
-const PostDetails = () => {
+// const PostDetails = () => {
 
 
-  return (
-    <div>
+//   return (
+//     <div>
       
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
-export default PostDetails
+// export default PostDetails

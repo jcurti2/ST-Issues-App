@@ -3,16 +3,15 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const Login = () => {
+const Register = () => {
     let navigate = useNavigate()
 
     const initialState = {
-        // username: '',
+        username: '',
         email: ''
     }
 
     const [formState, setFormState] = useState(initialState)
-    
     const handleChange = (event) => {
         setFormState({...formState, [event.target.id]: event.target.value })
     }
@@ -28,14 +27,14 @@ const Login = () => {
   return (
     <div>
         <form onSubmit={handleSubmit} className="form">
-            <h1 >Login</h1>
-                {/* <input
+            <h1 >Register</h1>
+                <input
                     placeholder="Username"
                     id="name"
                     type="text"
                     onChange={handleChange}
                     value={formState.username}
-                /> */}
+                />
                 <input
                     placeholder="Email"
                     id="email"
@@ -50,4 +49,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register
