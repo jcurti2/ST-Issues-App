@@ -20,7 +20,7 @@ const Register = () => {
         event.preventDefault()
         await axios.post(`http://localhost:3001/api/user/`, formState)
         setFormState(initialState)
-        await navigate('/home')
+        await navigate('/')
     }
 
 

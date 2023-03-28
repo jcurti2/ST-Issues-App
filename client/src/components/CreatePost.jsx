@@ -18,7 +18,7 @@ const CreatePost = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        await axios.post(`http://localhost:3001/api/post/`, formState)
+        // await axios.post(`http://localhost:3001/api/post/${userId}`, formState)
         setFormState(initialState)
         await navigate('/')
     }

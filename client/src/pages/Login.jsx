@@ -12,14 +12,14 @@ const Login = () => {
     }
 
     const [formState, setFormState] = useState(initialState)
-    
+
     const handleChange = (event) => {
         setFormState({...formState, [event.target.id]: event.target.value })
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        await axios.post(`http://localhost:3001/api/user/`, formState)
+        // await axios.get(`http://localhost:3001/api/user/`, formState)
         setFormState(initialState)
         await navigate('/home')
     }

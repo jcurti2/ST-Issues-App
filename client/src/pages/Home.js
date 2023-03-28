@@ -20,13 +20,9 @@ const Home = () => {
         getAllPosts()
     }, [])
         
-
-
-
-
   return (
     <div>
-        
+
       <div>
         {allPosts && allPosts.sort((b,a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) =>(
             <Link

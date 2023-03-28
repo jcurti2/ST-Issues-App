@@ -9,9 +9,10 @@ const CreateUser = async (req, res) => {
     }
 }
 
-const GetUserById = async (req, res) => {
+const GetUserByEmail = async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id)
+    const id = req.params.email
+    const user = await User.findOne({ email:id })
     res.send(user)
   } catch (error) {
     throw error
@@ -31,5 +32,5 @@ const DeleteUser = async (req, res) => {
 module.exports = {
     CreateUser,
     DeleteUser,
-    GetUserById
+    GetUserByEmail
 }
