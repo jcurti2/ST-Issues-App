@@ -19,9 +19,15 @@ const Login = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        // await axios.get(`http://localhost:3001/api/user/`, formState)
-        setFormState(initialState)
-        await navigate('/home')
+        const res = await axios.get(`http://localhost:3001/api/user/${formState.email}`)
+        // console.log(res.data);
+        if(res && Object.keys(res.data).length && res.data.email == formState.email)
+        {
+            navigate('/home', { state: { email: res.data.email, } })
+        } else {
+            alert('Incorrect Email')
+            setFormState(initialState)
+        }
     }
 
 
