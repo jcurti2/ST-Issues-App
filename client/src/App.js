@@ -7,7 +7,6 @@ import CreatePost from './components/CreatePost';
 function App() {
   return (
     <div className="App">
-      {/* <Home /> */}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
