@@ -1,5 +1,7 @@
 import React from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const CreatePost = () => {
     let navigate = useNavigate()
@@ -16,7 +18,7 @@ const CreatePost = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        await axios.post(`http://localhost:3001/api/post/${userId}`, formState)
+        await axios.post(`http://localhost:3001/api/post/`, formState)
         setFormState(initialState)
         await navigate('/')
     }

@@ -26,11 +26,16 @@ const Home = () => {
 
   return (
     <div>
+        
       <div>
         {allPosts && allPosts.sort((b,a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) =>(
-            <div key={post.id} className="postLink">
+            <Link
+            to={`/postdetails/${post.id}`}
+            key={post.id}
+            state={post}
+            className="postLink">
                 <h2 className="postTitle">{post.name}</h2>
-            </div>
+            </Link>
         ))}
       </div>
     </div>
