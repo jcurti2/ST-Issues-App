@@ -42,15 +42,15 @@ const Home = () => {
             <CreatePost userId={id} getAllPosts={getAllPosts}/>
         </div>
 
-      <div>
+      <div className='linkContainer'>
         {allPosts && allPosts.sort((b,a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) =>(
-            <Link
+           <div className='links'> <Link
             to={`/postdetails/${post.id}`}
             key={post.id}
             state={post}
             className="postLink">
                 <h2 className="postTitle">{post.name}</h2>
-            </Link>
+            </Link> </div>
         ))}
       </div>
             <UserPosts userId={id} />

@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.links {
+  background-color: #282c34;
+  height:200px;
+  width:200px;
+}
+
+.postLink {
+  color:salmon;
+}
+
+.linkContainer {
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: aquamarine;
+  
+}
