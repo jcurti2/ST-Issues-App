@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect} from 'react'
 import axios from 'axios'
 
-const UpdatePost = ({userPost}) => {
+const UpdatePost = ({userPost, getUserPosts, getAllPosts}) => {
 
         const initialState = {
             name: '',
@@ -19,6 +19,8 @@ const UpdatePost = ({userPost}) => {
             event.preventDefault()
             await axios.put(`http://localhost:3001/api/post/${userPost.id}`, formState)
             setFormState(initialState)
+            getUserPosts()
+            getAllPosts()
         }
 
   return (

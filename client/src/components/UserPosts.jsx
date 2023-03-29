@@ -3,7 +3,7 @@ import {React, useState, useEffect} from 'react'
 import axios from 'axios'
 import UpdatePost from './UpdatePost'
 
-const UserPosts = ({userId}) => {
+const UserPosts = ({userId, getAllPosts}) => {
 
     const [userPosts, setUserPosts] = useState([])
 
@@ -32,7 +32,7 @@ const UserPosts = ({userId}) => {
             <h4>{userPost.name}</h4> 
             <p>{userPost.content}</p>
 
-            <UpdatePost userPost={userPost} />
+            <UpdatePost userPost={userPost} getUserPosts={getUserPosts} getAllPosts={getAllPosts} />
             
 
             <button type="delete" className="deleteButton" onClick={()=>{deleteUserPost(userPost)}}>Delete</button>

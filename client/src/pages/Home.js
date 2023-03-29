@@ -53,7 +53,7 @@ const Home = () => {
             </Link> </div>
         ))}
       </div>
-            <UserPosts userId={id} />
+            <UserPosts userId={id} getAllPosts={getAllPosts} />
     </div>
   )
 }
