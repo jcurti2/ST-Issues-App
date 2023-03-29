@@ -1,9 +1,9 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, React } from 'react'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import CreatePost from '../components/CreatePost'
+import UserPosts from '../components/UserPosts'
 
 const Home = () => {
 
@@ -53,6 +53,7 @@ const Home = () => {
             </Link>
         ))}
       </div>
+            <UserPosts userId={id} />
     </div>
   )
 }
