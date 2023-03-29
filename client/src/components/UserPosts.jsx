@@ -1,6 +1,7 @@
 //will need to create user page or populate userPost at the bottom of dashboard, get all posts by userId, map over and add update button
 import {React, useState, useEffect} from 'react'
 import axios from 'axios'
+import UpdatePost from './UpdatePost'
 
 const UserPosts = ({userId}) => {
 
@@ -8,7 +9,7 @@ const UserPosts = ({userId}) => {
 
     const getUserPosts = async () => {
         let res = await axios.get(`http://localhost:3001/api/post/userposts/${userId}`)
-        console.log(res.data, 'posts');
+        // console.log(res.data, 'posts');
         setUserPosts(res.data)
     }
 
@@ -16,9 +17,6 @@ const UserPosts = ({userId}) => {
         await axios.delete(`http://localhost:3001/api/post/${userPost.id}`)
         getUserPosts()
     }
-
-
-
 
     useEffect(() => {
         getUserPosts()
@@ -33,6 +31,10 @@ const UserPosts = ({userId}) => {
         <div key={userPost.id} className="comment">
             <h4>{userPost.name}</h4> 
             <p>{userPost.content}</p>
+
+            <UpdatePost userPost={userPost} />
+            
+
             <button type="delete" className="deleteButton" onClick={()=>{deleteUserPost(userPost)}}>Delete</button>
         </div>
       ))}
