@@ -39,16 +39,16 @@ const Home = () => {
 
         <div>
             <div class="header">
-  <div class="row justify-content-start">
-    <div class="col-4">
-    <h2>{user.username}</h2>
-    </div>
-    </div>
-  </div>
-            
+                <div class="row justify-content-start">
+                    <div class="col-4">
+                        <h2>{user.username}</h2>
+                    </div>
+                </div>
+            </div>
+
             <div className='container'>
                 <div className='row align-items-start'>
-                    <div className='col'>
+                    <div className='col-3'>
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -62,26 +62,26 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-                        
-                        <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                User Posts
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                < UserPosts user={user} userId={id} getAllPosts={getAllPosts} />
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        User Posts
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        < UserPosts user={user} userId={id} getAllPosts={getAllPosts} />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    </div>
-                        </div>
-                        <div className='col'>
+                    <div className='col-9'>
                         {allPosts && allPosts.sort((b, a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) => (
                             <div className='container'>
-                                <div className='row justify-content-center'>
-                                    <div className='p-3 border bg-light w-50'>
+                                <div className='row justify-content-start'>
+                                    <div className='p-3 border bg-light w-50 row'>
                                         <p>{post.createdAt}</p>
                                         <Link
                                             to={`/postdetails/${post.id}`}
@@ -95,7 +95,7 @@ const Home = () => {
                                 </div>
                             </div>
                         ))}
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>

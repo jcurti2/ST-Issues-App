@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: lightgray;
 }
 
 .App-logo {
@@ -37,13 +38,16 @@
   }
 }
 .header{
-  margin-top: 5rem;
+  margin-bottom: 1rem;
+  background-color: blue;
+  color: white;
+  padding: 2rem;
 }
 .col  {
-  margin-top: 5rem;
+  /* margin-bottom: 10rem; */
 }
 .accordion {
-  width:20rem;
+  width:10rem;
 }
 
 .postLink {

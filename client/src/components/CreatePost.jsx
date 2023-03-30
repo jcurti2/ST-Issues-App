@@ -30,21 +30,21 @@ const CreatePost = ({userId, getAllPosts}) => {
     <div>
         <form onSubmit={handleSubmit} className="form">
             {/* <h2 >Create Post</h2> */}
-                <div className='mb-3'><input
+                <div className='mb-2'><input
                     placeholder="Title"
                     id="name"
                     type="text"
                     onChange={handleChange}
                     value={formState.name}
                 /></div>
-                <div className='mb-3'><input
+                <div className='mb-2'><input
                     placeholder="Content"
                     id="content"
                     type="text"
                     onChange={handleChange}
                     value={formState.content}
                 /></div>
-                <button type="submit" className="submitButton">Post</button>
+                <button type="submit" className="btn btn-primary">Post</button>
         </form>
       
     </div>

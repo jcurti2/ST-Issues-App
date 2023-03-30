@@ -26,7 +26,7 @@ const UserPosts = ({userId, getAllPosts, user}) => {
 
   return (
     <div>
-        <h3>{user.username} Posts</h3>
+        <p>{user.username} Posts</p>
       {userPosts && userPosts.sort((b,a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((userPost) => ( 
         <div key={userPost.id} className="comment">
             <h4>{userPost.name}</h4> 
@@ -35,7 +35,7 @@ const UserPosts = ({userId, getAllPosts, user}) => {
             <UpdatePost userPost={userPost} getUserPosts={getUserPosts} getAllPosts={getAllPosts} />
             
 
-            <button type="delete" className="btn btn-danger" onClick={()=>{deleteUserPost(userPost)}}>Delete</button>
+            <button type="delete" className="btn btn-danger mb-4" onClick={()=>{deleteUserPost(userPost)}}>Delete</button>
         </div>
       ))}
     </div>
