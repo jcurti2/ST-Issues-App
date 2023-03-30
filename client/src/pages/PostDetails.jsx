@@ -37,6 +37,7 @@ const PostDetails = () => {
             // console.log(userId);
             await axios.post(`http://localhost:3001/api/comment/${onePost.userId}/${onePost.id}`, formState)
             setFormState(initialState)
+            getComments()
         }
 
 

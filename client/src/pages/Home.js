@@ -67,7 +67,7 @@ const Home = () => {
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        User Posts
+                                        {user.username}'s Posts
                                     </button>
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -82,7 +82,7 @@ const Home = () => {
                         {allPosts && allPosts.sort((b, a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) => (
                             <div className='container'>
                                 <div className='row justify-content-start'>
-                                    <div className='p-3 border bg-light w-100 row'>                        
+                                    <div className='p-3 border bg-light w-100 row mb-3'>                        
                                         <Link
                                             to={`/postdetails/${post.id}`}
                                             key={post.id}
