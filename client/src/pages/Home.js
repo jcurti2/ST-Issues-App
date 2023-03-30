@@ -48,7 +48,7 @@ const Home = () => {
 
             <div className='container'>
                 <div className='row align-items-start'>
-                    <div className='col-3'>
+                    <div className='col'>
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">

@@ -43,11 +43,9 @@
   color: white;
   padding: 2rem;
 }
-.col  {
-  /* margin-bottom: 10rem; */
-}
+
 .accordion {
-  width:10rem;
+  width:15rem;
 }
 
 .postLink {
