@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import CreatePost from '../components/CreatePost'
 import UserPosts from '../components/UserPosts'
+import moment from 'moment'
 
 const Home = () => {
 
@@ -81,8 +82,7 @@ const Home = () => {
                         {allPosts && allPosts.sort((b, a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) => (
                             <div className='container'>
                                 <div className='row justify-content-start'>
-                                    <div className='p-3 border bg-light w-50 row'>
-                                        <p>{post.createdAt}</p>
+                                    <div className='p-3 border bg-light w-50 row'>                        
                                         <Link
                                             to={`/postdetails/${post.id}`}
                                             key={post.id}
@@ -91,6 +91,7 @@ const Home = () => {
 
                                             <h2 className="postTitle">{post.name}</h2>
                                         </Link>
+                                        <p>{moment((post.updatedAt)).format("dddd, Do MMM YYYY, h:mm A")}</p>
                                     </div>
                                 </div>
                             </div>
