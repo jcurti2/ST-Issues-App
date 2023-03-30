@@ -28,6 +28,7 @@ const CreatePost = ({userId, getAllPosts}) => {
 
   return (
     <div>
+        {/* <div className="container-sm"> */}
         <form onSubmit={handleSubmit} className="form">
             {/* <h2 >Create Post</h2> */}
                 <div className='mb-2'><input
@@ -46,6 +47,7 @@ const CreatePost = ({userId, getAllPosts}) => {
                 /></div>
                 <button type="submit" className="btn btn-primary">Post</button>
         </form>
+        {/* </div> */}
       
     </div>
   )

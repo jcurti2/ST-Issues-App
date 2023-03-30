@@ -82,7 +82,7 @@ const Home = () => {
                         {allPosts && allPosts.sort((b, a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) => (
                             <div className='container'>
                                 <div className='row justify-content-start'>
-                                    <div className='p-3 border bg-light w-50 row'>                        
+                                    <div className='p-3 border bg-light w-100 row'>                        
                                         <Link
                                             to={`/postdetails/${post.id}`}
                                             key={post.id}

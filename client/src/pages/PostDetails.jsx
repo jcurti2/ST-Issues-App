@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from 'react'
 import axios from "axios"
 import {useLocation, useNavigate, useParams } from 'react-router-dom'
+import moment from 'moment'
 
 const PostDetails = () => {
 
@@ -46,9 +47,9 @@ const PostDetails = () => {
   return (
     <div>
     {/* create comment, will need to pass id(postId) and userId into comment, then fill out form */}
-      {onePost.name} 
-      {onePost.content}
-      {onePost.createdAt}
+      <h4>{onePost.name} </h4>
+      <p>{onePost.content}</p>
+      {moment((onePost.updatedAt)).format("dddd, Do MMM YYYY, h:mm A")}
      
       <form onSubmit={handleSubmit} className="form">
             <h3></h3>
@@ -59,14 +60,14 @@ const PostDetails = () => {
                     onChange={handleChange}
                     value={formState.name}
                 /> */}
-                <input
+                <div className='mb-2'><input
                     placeholder="Add Comment"
                     id="content"
                     type="text"
                     onChange={handleChange}
                     value={formState.content}
-                />
-                <button type="submit" className="submitButton">Submit</button>
+                /></div>
+                <button type="submit" className="btn btn-success">Create Comment</button>
         </form>
         {comments && comments.sort((b,a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((comment) => ( 
         <div key={comment.id} className="comment">{comment.content}</div>
