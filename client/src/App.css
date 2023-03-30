@@ -36,21 +36,18 @@
     transform: rotate(360deg);
   }
 }
-
-/* .links {
-  background-color: #282c34;
-  height:200px;
-  width:200px;
+.header{
+  margin-top: 5rem;
+}
+.col  {
+  margin-top: 5rem;
+}
+.accordion {
+  width:20rem;
 }
 
 .postLink {
   color:salmon;
+  text-decoration:none;
 }
 
-.linkContainer {
-  display:flex;
-  flex-direction: column;
-  align-content: center;
-  background-color: aquamarine;
-  
-} */
