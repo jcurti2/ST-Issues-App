@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: lightgray;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -44,9 +45,9 @@
   padding: 2rem;
 }
 
-.accordion {
+/* .accordion {
   width:15rem;
-}
+} */
 
 .postLink {
   color:salmon;

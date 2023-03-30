@@ -49,7 +49,7 @@ const Home = () => {
 
             <div className='container'>
                 <div className='row align-items-start'>
-                    <div className='col'>
+                    <div className='col-3'>
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -78,7 +78,7 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='col-9'>
+                    <div className='col-6'>
                         {allPosts && allPosts.sort((b, a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) => (
                             <div className='container'>
                                 <div className='row justify-content-start'>
