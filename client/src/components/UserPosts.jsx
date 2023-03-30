@@ -3,7 +3,7 @@ import {React, useState, useEffect} from 'react'
 import axios from 'axios'
 import UpdatePost from './UpdatePost'
 
-const UserPosts = ({userId, getAllPosts}) => {
+const UserPosts = ({userId, getAllPosts, user}) => {
 
     const [userPosts, setUserPosts] = useState([])
 
@@ -26,7 +26,7 @@ const UserPosts = ({userId, getAllPosts}) => {
 
   return (
     <div>
-        <h3>User Posts</h3>
+        <h3>{user.username} Posts</h3>
       {userPosts && userPosts.sort((b,a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((userPost) => ( 
         <div key={userPost.id} className="comment">
             <h4>{userPost.name}</h4> 
@@ -35,7 +35,7 @@ const UserPosts = ({userId, getAllPosts}) => {
             <UpdatePost userPost={userPost} getUserPosts={getUserPosts} getAllPosts={getAllPosts} />
             
 
-            <button type="delete" className="deleteButton" onClick={()=>{deleteUserPost(userPost)}}>Delete</button>
+            <button type="delete" className="btn btn-danger" onClick={()=>{deleteUserPost(userPost)}}>Delete</button>
         </div>
       ))}
     </div>

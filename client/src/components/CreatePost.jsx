@@ -29,22 +29,22 @@ const CreatePost = ({userId, getAllPosts}) => {
   return (
     <div>
         <form onSubmit={handleSubmit} className="form">
-            <h2 >Create Post</h2>
-                <input
-                    placeholder="Name"
+            {/* <h2 >Create Post</h2> */}
+                <div className='mb-3'><input
+                    placeholder="Title"
                     id="name"
                     type="text"
                     onChange={handleChange}
                     value={formState.name}
-                />
-                <input
+                /></div>
+                <div className='mb-3'><input
                     placeholder="Content"
                     id="content"
                     type="text"
                     onChange={handleChange}
                     value={formState.content}
-                />
-                <button type="submit" className="submitButton">Submit</button>
+                /></div>
+                <button type="submit" className="submitButton">Post</button>
         </form>
       
     </div>

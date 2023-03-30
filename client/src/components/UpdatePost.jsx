@@ -26,21 +26,25 @@ const UpdatePost = ({userPost, getUserPosts, getAllPosts}) => {
   return (
     <div>{userPost &&
       <form onSubmit={handleSubmit} className="form">
-                <input
-                    placeholder="Title"
-                    id="name"
-                    type="text"
-                    onChange={handleChange}
-                    value={formState.name}
-                />
-                <input
-                    placeholder="Content"
-                    id="content"
-                    type="text"
-                    onChange={handleChange}
-                    value={formState.content}
-                />
-                <button type="submit" className="submitButton">Submit</button>
+                <div className='mb-3'>
+                    <input
+                        placeholder="Title"
+                        id="name"
+                        type="text"
+                        onChange={handleChange}
+                        value={formState.name}
+                    />
+                </div>
+                <div className='mb-3'>
+                    <input
+                        placeholder="Content"
+                        id="content"
+                        type="text"
+                        onChange={handleChange}
+                        value={formState.content}
+                    />
+                </div>
+                <button type="submit" className="btn btn-success">Update Post</button>
         </form>}
     </div>
   )
