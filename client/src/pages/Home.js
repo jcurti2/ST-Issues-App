@@ -36,25 +36,37 @@ const Home = () => {
     }, [])
         
   return (
-    <div>
-        {user.username} {user.email}
-        <div>
-            <CreatePost userId={id} getAllPosts={getAllPosts}/>
-        </div>
-
-      <div className='linkContainer'>
-        {allPosts && allPosts.sort((b,a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) =>(
-           <div className='links'> <Link
-            to={`/postdetails/${post.id}`}
-            key={post.id}
-            state={post}
-            className="postLink">
-                <h2 className="postTitle">{post.name}</h2>
-            </Link> </div>
-        ))}
-      </div>
+        
+<div>
+    <div className='container px-4'>
+        <div className='row align-items-start'>
+            <div className='col'>
+            <div classname='userInfo'>{user.username} {user.email}</div>
+            <div>
+                <CreatePost userId={id} getAllPosts={getAllPosts}/>
+            </div>
+            </div>
+            <div className='col'>
+                {/* <div className=>  */}
+            {allPosts && allPosts.sort((b,a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) =>(
+                <div className='p-3 border bg-light'> 
+                    <Link
+                    to={`/postdetails/${post.id}`}
+                    key={post.id}
+                    state={post}
+                    className="postLink">
+                        <h2 className="postTitle">{post.name}</h2>
+                    </Link> 
+                </div>
+            ))}
+                {/* </div> */}
+            </div>
+            
             <UserPosts userId={id} getAllPosts={getAllPosts} />
+            
+        </div>
     </div>
+</div>
   )
 }
 

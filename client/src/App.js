@@ -2,7 +2,7 @@ import './App.css';
 import Home from './pages/Home'
 import { Route, Routes } from 'react-router-dom'
 import PostDetails from './pages/PostDetails'
-import CreatePost from './components/CreatePost';
+// import CreatePost from './components/CreatePost';
 import Login from './pages/Login';
 import Register from './pages/Register'
 
