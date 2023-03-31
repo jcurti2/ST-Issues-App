@@ -33,6 +33,16 @@ const GetPostById = async (req, res) => {
   }
 }
 
+const GetPostByUser = async (req, res) => {
+  try {
+    const id = +req.params.userId
+    const user = await Post.findAll({ where: {userId:id} })
+    res.send(user)
+  } catch (error) {
+    throw error
+  }
+}
+
 const DeleteUserPost = async (req, res) => {
     try {
       let id = +req.params.id
@@ -61,5 +71,6 @@ module.exports = {
     GetAllPosts,
     DeleteUserPost,
     UpdateUserPost,
-    GetPostById
+    GetPostById,
+    GetPostByUser
 }

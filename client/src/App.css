@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: lightgray;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -36,3 +38,19 @@
     transform: rotate(360deg);
   }
 }
+.header{
+  margin-bottom: 1rem;
+  background-color: blue;
+  color: white;
+  padding: 2rem;
+}
+
+/* .accordion {
+  width:15rem;
+} */
+
+.postLink {
+  color:salmon;
+  text-decoration:none;
+}
+

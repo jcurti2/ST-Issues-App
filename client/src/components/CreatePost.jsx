@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const CreatePost = ({userId, getAllPosts}) => {
@@ -28,24 +28,26 @@ const CreatePost = ({userId, getAllPosts}) => {
 
   return (
     <div>
+        {/* <div className="container-sm"> */}
         <form onSubmit={handleSubmit} className="form">
-            <h2 >Create Post</h2>
-                <input
-                    placeholder="Name"
+            {/* <h2 >Create Post</h2> */}
+                <div className='mb-2'><input
+                    placeholder="Title"
                     id="name"
                     type="text"
                     onChange={handleChange}
                     value={formState.name}
-                />
-                <input
+                /></div>
+                <div className='mb-2'><input
                     placeholder="Content"
                     id="content"
                     type="text"
                     onChange={handleChange}
                     value={formState.content}
-                />
-                <button type="submit" className="submitButton">Submit</button>
+                /></div>
+                <button type="submit" className="btn btn-primary">Post</button>
         </form>
+        {/* </div> */}
       
     </div>
   )
