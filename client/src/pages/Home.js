@@ -49,7 +49,7 @@ const Home = () => {
 
             <div className='container'>
                 <div className='row align-items-start'>
-                    <div className='col-3'>
+                    <div className='col-4'>
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -65,11 +65,11 @@ const Home = () => {
                             </div>
 
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
+                                <h3 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         {user.username}'s Posts
                                     </button>
-                                </h2>
+                                </h3>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         < UserPosts user={user} userId={id} getAllPosts={getAllPosts} />
