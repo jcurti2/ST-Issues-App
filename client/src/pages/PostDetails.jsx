@@ -51,7 +51,7 @@ const PostDetails = () => {
 
             <div className='container '>
             <div className='row justify-content-center'>
-                        <div class="card-body text-dark width-100 card border-success row mt-3 mb-3">
+                        <div class="card-body text-dark width-100 card border-danger row mt-3 mb-3">
             <h4 className='postInDetails'>{onePost.name} </h4>
             <p>{onePost.content}</p>
             {moment((onePost.updatedAt)).format("dddd, Do MMM YYYY, h:mm A")}
@@ -73,7 +73,7 @@ const PostDetails = () => {
                 {comments && comments.sort((b, a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((comment) => (
                 
                     <div className='row justify-content-center'>
-                        <div class="card-body text-dark width-100 card border-primary row mb-3 ">
+                        <div class="card-body text-dark width-100 card border-dark row mb-3 ">
                             <div key={comment.id}>
                             <h5 class="card-title">{moment((comment.updatedAt)).format("dddd, Do MMM YYYY, h:mm A")}</h5>
                             <p class="card-text">{comment.content}</p>
