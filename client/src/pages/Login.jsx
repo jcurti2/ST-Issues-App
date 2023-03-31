@@ -34,16 +34,9 @@ const Login = () => {
 
   return (
     <div>
-    <div className='container justify-content-center'>
+    <div className='container justify-content-center align-items-center vw-100 vh-100 d-flex'>
         <div className='container mb-2'><form onSubmit={handleSubmit} className="form">
             <h2>Login</h2>
-                {/* <input
-                    placeholder="Username"
-                    id="name"
-                    type="text"
-                    onChange={handleChange}
-                    value={formState.username}
-                /> */}
                 <div className='mb-2'><input
                     placeholder="Email"
                     id="email"
