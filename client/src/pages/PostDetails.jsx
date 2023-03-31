@@ -6,7 +6,7 @@ import moment from 'moment'
 const PostDetails = () => {
 
     const { id } = useParams()
-
+    const navigate = useNavigate()
     const [comments, setComments] = useState([])
     const [onePost, setOnePost] = useState({})
 
@@ -70,6 +70,7 @@ const PostDetails = () => {
                 /></div>
                 <button type="submit" className="btn btn-success">Create Comment</button>
             </form>
+                <button type='submit' onClick={()=>{navigate(-1)}}>Back</button>
             {comments && comments.sort((b, a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((comment) => (
                 <div key={comment.id} className='card border-primary mb-3 w-50'>
                     <div class="card-body text-dark">
