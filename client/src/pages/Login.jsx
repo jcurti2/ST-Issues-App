@@ -45,9 +45,12 @@ const Login = () => {
                     value={formState.email}
                 /></div>
                 <p>Guest: guest@guest.com</p>
-                <button type="submit" className="btn btn-light">Submit</button>
-        </form></div>
-      <button type="submit" className="btn btn-light" onClick={()=>{navigate('/register')}}>Register</button>
+                <button type="submit" className="btn btn-light mb-2">Submit</button>
+                
+        </form>
+        <button type="submit" className="btn btn-light" onClick={()=>{navigate('/register')}}>Register</button>
+        </div>
+      
     </div>
     </div>
   )
