@@ -44,7 +44,7 @@ const UpdatePost = ({userPost, getUserPosts, getAllPosts}) => {
                         value={formState.content}
                     />
                 </div>
-                <button type="submit" className="btn btn-success mb-2">Update Post</button>
+                <button type="submit" className="btn btn-primary mb-2">Update Post</button>
         </form>}
     </div>
   )

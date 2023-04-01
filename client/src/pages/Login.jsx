@@ -34,16 +34,9 @@ const Login = () => {
 
   return (
     <div>
-    <div className='container justify-content-center'>
+    <div className='container justify-content-center align-items-center vw-100 vh-100 d-flex'>
         <div className='container mb-2'><form onSubmit={handleSubmit} className="form">
             <h2>Login</h2>
-                {/* <input
-                    placeholder="Username"
-                    id="name"
-                    type="text"
-                    onChange={handleChange}
-                    value={formState.username}
-                /> */}
                 <div className='mb-2'><input
                     placeholder="Email"
                     id="email"
@@ -52,9 +45,12 @@ const Login = () => {
                     value={formState.email}
                 /></div>
                 <p>Guest: guest@guest.com</p>
-                <button type="submit" className="btn btn-light">Submit</button>
-        </form></div>
-      <button type="submit" className="btn btn-light" onClick={()=>{navigate('/register')}}>Register</button>
+                <button type="submit" className="btn btn-light mb-2">Submit</button>
+                
+        </form>
+        <button type="submit" className="btn btn-light" onClick={()=>{navigate('/register')}}>Register</button>
+        </div>
+      
     </div>
     </div>
   )

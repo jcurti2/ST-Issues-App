@@ -6,7 +6,7 @@ import moment from 'moment'
 const PostDetails = () => {
 
     const { id } = useParams()
-
+    const navigate = useNavigate()
     const [comments, setComments] = useState([])
     const [onePost, setOnePost] = useState({})
 
@@ -47,20 +47,18 @@ const PostDetails = () => {
     }, [])
     return (
         <div>
-            {/* create comment, will need to pass id(postId) and userId into comment, then fill out form */}
+            <div className='container'>
+
+            <div className='container '>
+            <div className='row justify-content-center'>
+                        <div class="card-body text-dark width-100 card border-danger row mt-3 mb-3">
             <h4 className='postInDetails'>{onePost.name} </h4>
             <p>{onePost.content}</p>
             {moment((onePost.updatedAt)).format("dddd, Do MMM YYYY, h:mm A")}
-
+            </div>
+            </div>
+            </div>
             <form onSubmit={handleSubmit} className="form">
-                <h3></h3>
-                {/* <input
-                    placeholder="Comment Title"
-                    id="name"
-                    type="text"
-                    onChange={handleChange}
-                    value={formState.name}
-                /> */}
                 <div className='mb-2'><input
                     placeholder="Add Comment"
                     id="content"
@@ -68,16 +66,24 @@ const PostDetails = () => {
                     onChange={handleChange}
                     value={formState.content}
                 /></div>
-                <button type="submit" className="btn btn-success">Create Comment</button>
+                <button type="submit" className="btn btn-dark mb-2">Create Comment</button>
             </form>
-            {comments && comments.sort((b, a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((comment) => (
-                <div key={comment.id} className='card border-primary mb-3 w-50'>
-                    <div class="card-body text-dark">
-    <h5 class="card-title">{moment((comment.updatedAt)).format("dddd, Do MMM YYYY, h:mm A")}</h5>
-    <p class="card-text">{comment.content}</p>
-  </div>
-                </div>
+            <button type='submit' className="btn btn-dark mb-2" onClick={() => { navigate(-1) }}>Back</button>
+            <div className='col-8 container'>
+                {comments && comments.sort((b, a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((comment) => (
+                
+                    <div className='row justify-content-center'>
+                        <div class="card-body text-dark width-100 card border-dark row mb-3 ">
+                            <div key={comment.id}>
+                            <h5 class="card-title">{moment((comment.updatedAt)).format("dddd, Do MMM YYYY, h:mm A")}</h5>
+                            <p class="card-text">{comment.content}</p>
+                            </div>
+                        </div>
+                    </div>
+                
             ))}
+            </div>
+            </div>
         </div>
     )
 }

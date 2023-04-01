@@ -48,8 +48,8 @@ const Home = () => {
             </div>
 
             <div className='container'>
-                <div className='row align-items-start'>
-                    <div className='col-3'>
+                <div className='row align-items-start' id='columnholder'>
+                    <div className='col-4' id='column'>
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -65,11 +65,11 @@ const Home = () => {
                             </div>
 
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
+                                <h3 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         {user.username}'s Posts
                                     </button>
-                                </h2>
+                                </h3>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         < UserPosts user={user} userId={id} getAllPosts={getAllPosts} />
@@ -78,10 +78,10 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='col-6'>
+                    <div className='col-6' id='column'>
                         {allPosts && allPosts.sort((b, a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) => (
-                            <div className='container'>
-                                <div className='row justify-content-start'>
+                            <div className='container' id='container2'>
+                                <div className='row justify-content-start w-100' id="post">
                                     <div className='p-3 border bg-light w-100 row mb-3'>                        
                                         <Link
                                             to={`/postdetails/${post.id}`}
