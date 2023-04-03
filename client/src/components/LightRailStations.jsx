@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from 'react'
+import { React, useState, useEffect } from 'react'
 import axios from 'axios'
 import moment from 'moment'
 
@@ -12,52 +12,50 @@ const LightRailStations = () => {
         const stops = res.data.data.references.stops
         console.log(stops);
         setTrainStops(stops);
-      }
-  
-      const getTrainStopInfo = async (trainStop) =>{
-          let res = await axios.get(`https://api.pugetsound.onebusaway.org/api/where/arrivals-and-departures-for-stop/${trainStop.id}.json?key=28080be6-8167-4a43-b188-e40b6d354ff9`)
-          let time = res.data.data.entry.arrivalsAndDepartures
-          
+    }
+
+    const getTrainStopInfo = async (trainStop) => {
+        let res = await axios.get(`https://api.pugetsound.onebusaway.org/api/where/arrivals-and-departures-for-stop/${trainStop.id}.json?key=28080be6-8167-4a43-b188-e40b6d354ff9`)
+        let time = res.data.data.entry.arrivalsAndDepartures
+
         setTrainStopInfo(time)
-      }
-  
-      useEffect(() => {
+    }
+
+    useEffect(() => {
         getTrainStops()
-      }, [])
+    }, [])
 
-  return (
-    <div>
-      <div class="row align-items-start">
-      <div class="col">
-        <div className="dropdown">
-
-          <button className='btn btn-primary dropdown-toggle' type="button" data-bs-toggle="dropdown" aria-expanded="false">Train Stations</button>
-
-          <ul className="dropdown-menu">
-            
-              {trainStops && trainStops.sort((a, b) => a.name.localeCompare(b.name)).map((trainStop) => (
-                    <li className='dropdown-item' onClick={() => getTrainStopInfo(trainStop)}>{trainStop.name} {trainStop.direction}
-                  </li>
-              ))}
-          </ul>
-
-        </div>
-        </div>
-        </div>
-        <div class="col">
+    return (
         <div>
+            <div class="row align-items-start">
+                <div class="col">
+                    <div className="dropdown">
 
-            {trainStopInfo && trainStopInfo.map((trainStopInfo) => (
-                <div classname='trainTime' key ={trainStopInfo.tripId}>
-                    {trainStopInfo.predictedArrivalTime > 0 && (moment(trainStopInfo.predictedArrivalTime).format("dddd, Do MMM YYYY, h:mm A"))}
+                        <button className='btn btn-primary dropdown-toggle' type="button" data-bs-toggle="dropdown" aria-expanded="false">Train Stations</button>
+
+                        <ul className="dropdown-menu">
+
+                            {trainStops && trainStops.sort((a, b) => a.name.localeCompare(b.name)).map((trainStop) => (
+                                <li className='dropdown-item' onClick={() => getTrainStopInfo(trainStop)}>{trainStop.name} {trainStop.direction}
+                                </li>
+                            ))}
+                        </ul>
+
+                    </div>
                 </div>
-                //would like to only show upcoming trains, not past trains.
-            ))}
-
+            </div>
+            <div class="col">
+                <div>
+                    {trainStopInfo && trainStopInfo.map((trainStopInfo) => (
+                        <div classname='trainTime' key={trainStopInfo.tripId}>
+                            {trainStopInfo.predictedArrivalTime > 0 && (moment(trainStopInfo.predictedArrivalTime).format("dddd, Do MMM YYYY, h:mm A"))}
+                        </div>
+                        //would like to only show upcoming trains, not past trains.
+                    ))}
+                </div>
+            </div>
         </div>
-        </div>
-    </div>
-  )
+    )
 }
 
 export default LightRailStations

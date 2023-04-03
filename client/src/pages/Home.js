@@ -98,7 +98,9 @@ const Home = () => {
                             </div>
                         ))}
                     </div>
+                    <div className='col-2' id='column'>
                     <LightRailStations />
+                    </div>
                 </div>
             </div>
         </div>
