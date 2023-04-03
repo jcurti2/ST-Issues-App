@@ -52,6 +52,14 @@
 .row{
   border-radius: 15px;
 }
+.col-5{
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+.dropdown-menu{
+  max-height: 87vh;
+  overflow-y: scroll;
+}
 
 @media (max-width: 767.98px) { 
   /* .row {
@@ -63,7 +71,6 @@
     width: 75%;
     justify-content: center;
     margin-bottom: 1rem;
-  
   }
   .row{
     --bs-gutter-x: 0;

@@ -82,7 +82,7 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='col-6' id='column'>
+                    <div className='col-5' id='column'>
                         {allPosts && allPosts.sort((b, a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) => (
                             <div className='container' id='container2'>
                                 <div className='row justify-content-start w-100' id="post">
