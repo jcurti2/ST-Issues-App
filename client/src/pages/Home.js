@@ -6,6 +6,7 @@ import CreatePost from '../components/CreatePost'
 import UserPosts from '../components/UserPosts'
 import moment from 'moment'
 import LightRailStations from '../components/LightRailStations'
+import Client from '../api'
 
 const Home = () => {
 
@@ -16,7 +17,7 @@ const Home = () => {
 
     const getUser = async () => {
 
-        let res = await axios.get(`/api/user/${id}`)
+        let res = await Client.get(`/api/user/${id}`)
         console.log(res.data, 'here');
         setUser(res.data)
     }
@@ -24,7 +25,7 @@ const Home = () => {
 
     const getAllPosts = async () => {
         try {
-            let res = await axios.get('/api/post')
+            let res = await Client.get(`/api/post`)
             // console.log(res.data);
             setAllPosts(res.data)
         } catch (error) {

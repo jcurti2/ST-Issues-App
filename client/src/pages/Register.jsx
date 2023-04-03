@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Client from '../api'
 
 const Register = () => {
     let navigate = useNavigate()
@@ -18,7 +19,7 @@ const Register = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        await axios.post(`/api/user/`, formState)
+        await Client.post(`/api/user/`, formState)
         setFormState(initialState)
         await navigate('/')
     }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 // import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import Client from '../api'
 
 const CreatePost = ({userId, getAllPosts}) => {
     
@@ -20,7 +20,7 @@ const CreatePost = ({userId, getAllPosts}) => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         // console.log(userId);
-        await axios.post(`/api/post/${userId}`, formState)
+        await Client.post(`/api/post/${userId}`, formState)
         setFormState(initialState)
         getAllPosts()
     }

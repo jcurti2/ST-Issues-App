@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect} from 'react'
-import axios from 'axios'
+import Client from '../api'
 
 const UpdatePost = ({userPost, getUserPosts, getAllPosts}) => {
 
@@ -17,7 +17,7 @@ const UpdatePost = ({userPost, getUserPosts, getAllPosts}) => {
     
         const handleSubmit = async (event) => {
             event.preventDefault()
-            await axios.put(`/api/post/${userPost.id}`, formState)
+            await Client.put(`/api/post/${userPost.id}`, formState)
             setFormState(initialState)
             getUserPosts()
             getAllPosts()
