@@ -53,24 +53,31 @@
   border-radius: 15px;
 }
 .col-5{
-  max-height: 87vh;
+  max-height: 83vh;
   overflow-y: scroll;
 }
 .dropdown-menu{
-  max-height: 85vh;
+  max-height: 78vh;
   overflow-y: scroll;
+}
+.col-4{
+  max-height: 80vh;
+  overflow-y: scroll;
+  border-radius: 20px;
 }
 
 @media (max-width: 767.98px) { 
-  /* .row {
-    display: block; */
-  /* } */
+  .col-4{
+    max-height: 25vh;
+    overflow-y: scroll;
+  }
   #column{
     /* display: flex;
     flex-wrap: wrap; */
     width: 75%;
     justify-content: center;
     margin-bottom: 1rem;
+    max-height: 50vh;
   }
   .row{
     --bs-gutter-x: 0;
