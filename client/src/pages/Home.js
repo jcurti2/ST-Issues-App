@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 import CreatePost from '../components/CreatePost'
 import UserPosts from '../components/UserPosts'
 import moment from 'moment'
+import LightRailStations from '../components/LightRailStations'
 
 const Home = () => {
 
@@ -97,6 +98,7 @@ const Home = () => {
                             </div>
                         ))}
                     </div>
+                    <LightRailStations />
                 </div>
             </div>
         </div>
