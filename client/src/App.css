@@ -53,11 +53,11 @@
   border-radius: 15px;
 }
 .col-5{
-  max-height: 100vh;
+  max-height: 87vh;
   overflow-y: scroll;
 }
 .dropdown-menu{
-  max-height: 87vh;
+  max-height: 85vh;
   overflow-y: scroll;
 }
 

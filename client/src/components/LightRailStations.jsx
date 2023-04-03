@@ -48,7 +48,9 @@ const LightRailStations = () => {
                 <div>
                     {trainStopInfo && trainStopInfo.map((trainStopInfo) => (
                         <div classname='trainTime' key={trainStopInfo.tripId}>
-                            {trainStopInfo.predictedArrivalTime > 0 && (moment(trainStopInfo.predictedArrivalTime).format("dddd, Do MMM YYYY, h:mm A"))}
+                            <div className='card mt-1'>
+                                {trainStopInfo.predictedArrivalTime > 0 && (moment(trainStopInfo.predictedArrivalTime).format("dddd, Do MMM YYYY, h:mm A"))}
+                            </div>
                         </div>
                         //would like to only show upcoming trains, not past trains.
                     ))}
