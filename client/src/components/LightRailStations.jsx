@@ -27,11 +27,11 @@ const LightRailStations = () => {
 
     return (
         <div>
-            <div class="row align-items-start">
-                <div class="col">
+            <div className="row align-items-start">
+                <div className="col">
                     <div className="dropdown">
 
-                        <button className='btn btn-primary dropdown-toggle' type="button" data-bs-toggle="dropdown" aria-expanded="false">Train Stations</button>
+                        <button className='btn btn-light dropdown-toggle' type="button" data-bs-toggle="dropdown" aria-expanded="false">Train Stations</button>
 
                         <ul className="dropdown-menu">
 
@@ -44,7 +44,7 @@ const LightRailStations = () => {
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div className="col">
                 <div>
                     {trainStopInfo && trainStopInfo.map((trainStopInfo) => (
                         <div classname='trainTime' key={trainStopInfo.tripId}>

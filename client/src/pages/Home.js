@@ -40,10 +40,13 @@ const Home = () => {
     return (
 
         <div>
-            <div class="header">
-                <div class="row justify-content-start">
-                    <div class="col-4">
-                        <h2>{user.username}</h2>
+            <div className="header">
+                <div className="row justify-content-start">
+                    <div className="col-4">
+                        <h5>{user.username}</h5>
+                    </div>
+                    <div className='col-5'>
+                        <h3>StopSpotter: Your Crowd-Sourced Transit Issue Reporter</h3>
                     </div>
                 </div>
             </div>
@@ -51,28 +54,28 @@ const Home = () => {
             <div className='container'>
                 <div className='row align-items-start' id='columnholder'>
                     <div className='col-4' id='column'>
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <div className="accordion" id="accordionExample">
+                            <div className="accordion-item">
+                                <h2 className="accordion-header" id="headingOne">
+                                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                         Create Post
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
+                                <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div className="accordion-body">
                                         <CreatePost userId={id} getAllPosts={getAllPosts} />
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="accordion-item">
-                                <h3 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <div className="accordion-item">
+                                <h3 className="accordion-header" id="headingTwo">
+                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         {user.username}'s Posts
                                     </button>
                                 </h3>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
+                                <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div className="accordion-body">
                                         < UserPosts user={user} userId={id} getAllPosts={getAllPosts} />
                                     </div>
                                 </div>
