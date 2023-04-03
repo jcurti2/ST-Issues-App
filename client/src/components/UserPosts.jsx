@@ -40,7 +40,7 @@ const UserPosts = ({userId, getAllPosts, user}) => {
 
             <img 
             id="deletePost" 
-            className="btn btn-danger mb-4" 
+            className="btn btn-danger mb-2" 
             onClick={()=>{deleteUserPost(userPost)}} 
             alt="trash icon"
             src="https://cdn-icons-png.flaticon.com/512/542/542724.png"
