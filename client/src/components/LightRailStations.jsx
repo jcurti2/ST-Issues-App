@@ -8,14 +8,14 @@ const LightRailStations = () => {
     const [trainStops, setTrainStops] = useState()
 
     const getTrainStops = async () => {
-        let res = await axios.get(`https://api.pugetsound.onebusaway.org/api/where/stops-for-route/40_100479.json?key=28080be6-8167-4a43-b188-e40b6d354ff9`)
+        let res = await axios.get(`https://api.pugetsound.onebusaway.org/api/where/stops-for-route/40_100479.json?key=${process.env.REACT_APP_API_KEY}`)
         const stops = res.data.data.references.stops
         console.log(stops);
         setTrainStops(stops);
     }
 
     const getTrainStopInfo = async (trainStop) => {
-        let res = await axios.get(`https://api.pugetsound.onebusaway.org/api/where/arrivals-and-departures-for-stop/${trainStop.id}.json?key=28080be6-8167-4a43-b188-e40b6d354ff9`)
+        let res = await axios.get(`https://api.pugetsound.onebusaway.org/api/where/arrivals-and-departures-for-stop/${trainStop.id}.json?key=${process.env.REACT_APP_API_KEY}`)
         let time = res.data.data.entry.arrivalsAndDepartures
 
         setTrainStopInfo(time)
