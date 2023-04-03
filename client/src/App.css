@@ -57,7 +57,7 @@
   overflow-y: scroll;
 }
 .dropdown-menu{
-  max-height: 78vh;
+  max-height: 75vh;
   overflow-y: scroll;
 }
 .col-4{
@@ -66,7 +66,7 @@
   border-radius: 20px;
 }
 
-@media (max-width: 767.98px) { 
+@media (max-width: 880px) { 
   .col-4{
     max-height: 25vh;
     overflow-y: scroll;
