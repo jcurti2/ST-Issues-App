@@ -19,7 +19,7 @@ const Login = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const res = await axios.post(`http://localhost:3001/api/user/login`, formState)
+        const res = await axios.post(`/api/user/login`, formState)
 
         console.log(res.data);
         if(res && Object.keys(res.data).length && res.data.email == formState.email)

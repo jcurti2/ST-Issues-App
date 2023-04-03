@@ -18,7 +18,7 @@ const Register = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        await axios.post(`http://localhost:3001/api/user/`, formState)
+        await axios.post(`/api/user/`, formState)
         setFormState(initialState)
         await navigate('/')
     }

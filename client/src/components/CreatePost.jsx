@@ -20,7 +20,7 @@ const CreatePost = ({userId, getAllPosts}) => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         // console.log(userId);
-        await axios.post(`http://localhost:3001/api/post/${userId}`, formState)
+        await axios.post(`/api/post/${userId}`, formState)
         setFormState(initialState)
         getAllPosts()
     }

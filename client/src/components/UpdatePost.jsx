@@ -17,7 +17,7 @@ const UpdatePost = ({userPost, getUserPosts, getAllPosts}) => {
     
         const handleSubmit = async (event) => {
             event.preventDefault()
-            await axios.put(`http://localhost:3001/api/post/${userPost.id}`, formState)
+            await axios.put(`/api/post/${userPost.id}`, formState)
             setFormState(initialState)
             getUserPosts()
             getAllPosts()

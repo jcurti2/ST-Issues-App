@@ -11,13 +11,13 @@ const PostDetails = () => {
     const [onePost, setOnePost] = useState({})
 
     const getComments = async () => {
-        let res = await axios.get(`http://localhost:3001/api/comment/${id}`)
+        let res = await axios.get(`/api/comment/${id}`)
         console.log(res.data, 'comment');
         setComments(res.data)
     }
 
     const getOnePost = async () => {
-        let res = await axios.get(`http://localhost:3001/api/post/${id}`)
+        let res = await axios.get(`/api/post/${id}`)
         console.log(res.data, 'here')
         setOnePost(res.data)
     }
@@ -35,7 +35,7 @@ const PostDetails = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         // console.log(userId);
-        await axios.post(`http://localhost:3001/api/comment/${onePost.userId}/${onePost.id}`, formState)
+        await axios.post(`/api/comment/${onePost.userId}/${onePost.id}`, formState)
         setFormState(initialState)
         getComments()
     }

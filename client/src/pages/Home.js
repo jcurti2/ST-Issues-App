@@ -16,7 +16,7 @@ const Home = () => {
 
     const getUser = async () => {
 
-        let res = await axios.get(`http://localhost:3001/api/user/${id}`)
+        let res = await axios.get(`/api/user/${id}`)
         console.log(res.data, 'here');
         setUser(res.data)
     }
@@ -24,7 +24,7 @@ const Home = () => {
 
     const getAllPosts = async () => {
         try {
-            let res = await axios.get('http://localhost:3001/api/post')
+            let res = await axios.get('/api/post')
             // console.log(res.data);
             setAllPosts(res.data)
         } catch (error) {

@@ -8,13 +8,13 @@ const UserPosts = ({userId, getAllPosts, user}) => {
     const [userPosts, setUserPosts] = useState([])
 
     const getUserPosts = async () => {
-        let res = await axios.get(`http://localhost:3001/api/post/userposts/${userId}`)
+        let res = await axios.get(`/api/post/userposts/${userId}`)
         // console.log(res.data, 'posts');
         setUserPosts(res.data)
     }
 
     const deleteUserPost = async (userPost) => {
-        await axios.delete(`http://localhost:3001/api/post/${userPost.id}`)
+        await axios.delete(`/api/post/${userPost.id}`)
         getUserPosts()
     }
 
