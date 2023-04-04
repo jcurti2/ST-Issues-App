@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 import Client from '../api'
 
 const Register = () => {
@@ -43,7 +43,7 @@ const Register = () => {
                     onChange={handleChange}
                     value={formState.email}
                 />
-                <button type="submit" className="submitButton">Submit</button>
+                <button type="submit" className="btn btn-light">Submit</button>
         </form>
       
     </div>
