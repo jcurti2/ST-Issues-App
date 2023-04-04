@@ -36,6 +36,7 @@ const UpdatePost = ({userPost, getUserPosts, getAllPosts}) => {
                     />
                 </div>
                 <div className='mb-3'>
+                    {/* needs to apply the content previously used unless directly overwritten */}
                     <input
                         placeholder="Content"
                         id="content"

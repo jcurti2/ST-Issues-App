@@ -44,7 +44,7 @@ const Home = () => {
                     <div className="col-4">
                         <h5>{user.username}</h5>
                     </div>
-                    <div className='col-5'>
+                    <div className='col-5' >
                         <h3>StopSpotter: Your Crowd-Sourced Transit Issue Reporter</h3>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ const Home = () => {
 
             <div className='container'>
                 <div className='row align-items-start' id='columnholder'>
-                    <div className='col-4' id='column'>
+                    <div className='col-4' id='column1'>
                         <div className="accordion" id="accordionExample">
                             <div className="accordion-item">
                                 <h2 className="accordion-header" id="headingOne">
@@ -81,7 +81,7 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='col-5' id='column'>
+                    <div className='col-5' id='column2'>
                         {allPosts && allPosts.sort((b, a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) => (
                             <div className='container' id='container2'>
                                 <div className='row justify-content-start w-100' id="post">
@@ -100,7 +100,7 @@ const Home = () => {
                             </div>
                         ))}
                     </div>
-                    <div className='col-2' id='column'>
+                    <div className='col-2' id='column3'>
                         <LightRailStations />
                     </div>
                 </div>

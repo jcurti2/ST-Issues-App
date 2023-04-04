@@ -52,7 +52,7 @@
 .row{
   border-radius: 15px;
 }
-.col-5{
+#column2{
   max-height: 83vh;
   overflow-y: scroll;
 }
@@ -60,7 +60,7 @@
   max-height: 75vh;
   overflow-y: scroll;
 }
-.col-4{
+#column1{
   max-height: 80vh;
   overflow-y: scroll;
   border-radius: 20px;
@@ -71,7 +71,7 @@
     max-height: 25vh;
     overflow-y: scroll;
   }
-  #column{
+  #column1, #column2, #column3 {
     /* display: flex;
     flex-wrap: wrap; */
     width: 75%;
