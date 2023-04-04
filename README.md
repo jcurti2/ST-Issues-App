@@ -1,4 +1,4 @@
-# ST-Issues-App
+# StopSpotter: Your Crowd-Sourced Transit Issue Reporter
 ## Date 3/24/2023
 ### By: Josh Curtis
 [LinkedIn](https://www.linkedin.com/in/josh-curtis08/) [GitHub](https://github.com/jcurti2) 
@@ -20,16 +20,16 @@ Did a bus never arrive at your stop, is the bus delayed, are there other issues 
 
 ### ***Screenshots***
 #### Name
-![Description/Name](url)
+
 
 ***
 ### ***Future Updates***
-- [ ] Future Update 1
-- [ ] Future Update 2
-- [x] Completed Update
-- [x] ~~Strikethrough~~ Items Also
+- [ ] Show Owner of posts
+- [ ] Display bus routes/stops
+- [x] ~~Strikethrough~~ Integrate Sound Transit API
+- [x] ~~Strikethrough~~ Three columns with pertinent info
 ***
 ### ***Credits***
-#### 
-#### 
+#### chatgpt for name of app
+#### sound transit for api key
 #### 
