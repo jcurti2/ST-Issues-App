@@ -26,8 +26,8 @@ Did a bus never arrive at your stop, is the bus delayed, are there other issues 
 ### ***Future Updates***
 - [ ] Show Owner of posts
 - [ ] Display bus routes/stops
-- [x] ~~Strikethrough~~ Integrate Sound Transit API
-- [x] ~~Strikethrough~~ Three columns with pertinent info
+- [x] ~~Integrate Sound Transit API~~
+- [x] ~~Three columns with pertinent info~~
 ***
 ### ***Credits***
 #### chatgpt for name of app
