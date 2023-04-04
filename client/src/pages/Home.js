@@ -18,7 +18,6 @@ const Home = () => {
     const getUser = async () => {
 
         let res = await Client.get(`/api/user/${id}`)
-        console.log(res.data, 'here');
         setUser(res.data)
     }
 

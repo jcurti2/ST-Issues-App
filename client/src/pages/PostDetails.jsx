@@ -13,18 +13,15 @@ const PostDetails = () => {
 
     const getComments = async () => {
         let res = await Client.get(`/api/comment/${id}`)
-        console.log(res.data, 'comment');
         setComments(res.data)
     }
 
     const getOnePost = async () => {
         let res = await Client.get(`/api/post/${id}`)
-        console.log(res.data, 'here')
         setOnePost(res.data)
     }
 
     const initialState = {
-        // name: '',
         content: ''
     }
 
@@ -35,7 +32,6 @@ const PostDetails = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        // console.log(userId);
         await Client.post(`/api/comment/${onePost.userId}/${onePost.id}`, formState)
         setFormState(initialState)
         getComments()

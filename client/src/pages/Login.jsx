@@ -22,7 +22,6 @@ const Login = () => {
         event.preventDefault()
         const res = await Client.post(`/api/user/login`, formState)
 
-        console.log(res.data);
         if (res && Object.keys(res.data).length && res.data.email == formState.email) {
             navigate(`/home/${res.data.id}`)
         } else {
