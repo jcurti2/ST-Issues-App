@@ -1,6 +1,6 @@
 import Axios from "axios"
 
-export const BASE_URL = 'https://git.heroku.com/stopspotter.git'
+export const BASE_URL = 'https://stopspotter.herokuapp.com/'
 
 // export const BASE_URL="http://localhost:3001/"
 
