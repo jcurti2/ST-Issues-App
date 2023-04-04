@@ -1,5 +1,5 @@
 import { useState, useEffect, React } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import CreatePost from '../components/CreatePost'
