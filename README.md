@@ -1,4 +1,4 @@
-# ST-Issues-App
+# StopSpotter: Your Crowd-Sourced Transit Issue Reporter
 ## Date 3/24/2023
 ### By: Josh Curtis
 [LinkedIn](https://www.linkedin.com/in/josh-curtis08/) [GitHub](https://github.com/jcurti2) 
