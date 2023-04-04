@@ -26,7 +26,6 @@ const Home = () => {
     const getAllPosts = async () => {
         try {
             let res = await Client.get(`/api/post`)
-            // console.log(res.data);
             setAllPosts(res.data)
         } catch (error) {
             console.log(error);
@@ -87,7 +86,7 @@ const Home = () => {
                         {allPosts && allPosts.sort((b, a) => new Date(...a.updatedAt.split('/')) - new Date(...b.updatedAt.split('/'))).map((post) => (
                             <div className='container' id='container2'>
                                 <div className='row justify-content-start w-100' id="post">
-                                    <div className='p-3 border bg-light w-100 row mb-3'>                        
+                                    <div className='p-3 border bg-light w-100 row mb-3'>
                                         <Link
                                             to={`/postdetails/${post.id}`}
                                             key={post.id}
@@ -103,7 +102,7 @@ const Home = () => {
                         ))}
                     </div>
                     <div className='col-2' id='column'>
-                    <LightRailStations />
+                        <LightRailStations />
                     </div>
                 </div>
             </div>

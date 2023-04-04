@@ -52,7 +52,6 @@ const LightRailStations = () => {
                                 {trainStopInfo.predictedArrivalTime > 0 && (moment(trainStopInfo.predictedArrivalTime).format("dddd, Do MMM YYYY, h:mm A"))}
                             </div>
                         </div>
-                        //would like to only show upcoming trains, not past trains.
                     ))}
                 </div>
             </div>
