@@ -10,7 +10,6 @@ const LightRailStations = () => {
     const getTrainStops = async () => {
         let res = await axios.get(`https://api.pugetsound.onebusaway.org/api/where/stops-for-route/40_100479.json?key=${process.env.REACT_APP_API_KEY}`)
         const stops = res.data.data.references.stops
-        console.log(stops);
         setTrainStops(stops);
     }
 
