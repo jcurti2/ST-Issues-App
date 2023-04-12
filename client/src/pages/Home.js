@@ -7,6 +7,7 @@ import UserPosts from '../components/UserPosts'
 import moment from 'moment'
 import LightRailStations from '../components/LightRailStations'
 import Client from '../api'
+import PostCreator from '../components/PostCreator'
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
     const [allPosts, setAllPosts] = useState([])
     const [user, setUser] = useState({})
     const { id } = useParams()
+    
 
     const getUser = async () => {
 
@@ -21,11 +23,11 @@ const Home = () => {
         setUser(res.data)
     }
 
-
     const getAllPosts = async () => {
         try {
             let res = await Client.get(`/api/post`)
             setAllPosts(res.data)
+            console.log(res.data);
         } catch (error) {
             console.log(error);
         }
@@ -86,12 +88,12 @@ const Home = () => {
                             <div className='container' id='container2'>
                                 <div className='row justify-content-start w-100' id="post">
                                     <div className='p-3 border bg-light w-100 row mb-3'>
+                                    <PostCreator post={post} />
                                         <Link
                                             to={`/postdetails/${post.id}`}
                                             key={post.id}
                                             state={post}
                                             className="postLink">
-
                                             <h2 className="postTitle">{post.name}</h2>
                                         </Link>
                                         <p>{moment((post.updatedAt)).format("dddd, Do MMM YYYY, h:mm A")}</p>
